@@ -1,4 +1,6 @@
-import React from "react";
+// src/pages/HomePage.js
+
+import React, { useEffect, useState } from "react";
 import { useCategories } from "../context/CategoryContext";
 import { useTags } from "../context/TagContext";
 import { useCampaigns } from "../context/CampaignContext";
@@ -8,9 +10,6 @@ import Footer from "../components/Footer/Footer";
 import ShopByCategorySection from "../components/ShopByCategorySection";
 import BestSellersSection from "../components/BestSellersSection";
 import CampaignSlider from "../components/CampaignSlider";
-import { useEffect, useState } from "react";
-
-// Vercel dağıtımını tetiklemek için geçici yorum. Bu yorumu daha sonra silebilirsiniz.
 
 const HomePage = () => {
   const { categories } = useCategories();
@@ -21,38 +20,47 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchAll = async () => {
-      let campaignsArr = [];
-      // Kategori kampanyaları
-      for (const cat of categories) {
-        const catCampaigns = await fetchCampaignsByCategory(cat.id);
-        catCampaigns.forEach((c) => {
-          campaignsArr.push({
-            ...c,
-            type: "category",
-            categoryId: cat.id,
-            title: c.title,
-            description: c.description,
+      try {
+        let campaignsArr = [];
+
+        for (const cat of categories) {
+          const catCampaigns = await fetchCampaignsByCategory(cat.id);
+          catCampaigns.forEach((c) => {
+            campaignsArr.push({
+              ...c,
+              type: "category",
+              categoryId: cat.id,
+              title: c.title,
+              description: c.description,
+            });
           });
-        });
-      }
-      // Etiket kampanyaları
-      for (const tag of tags) {
-        const tagCampaigns = await fetchCampaignsByTag(tag.id);
-        tagCampaigns.forEach((c) => {
-          campaignsArr.push({
-            ...c,
-            type: "tag",
-            tagId: tag.id,
-            title: c.title,
-            description: c.description,
+        }
+
+        for (const tag of tags) {
+          const tagCampaigns = await fetchCampaignsByTag(tag.id);
+          tagCampaigns.forEach((c) => {
+            campaignsArr.push({
+              ...c,
+              type: "tag",
+              tagId: tag.id,
+              title: c.title,
+              description: c.description,
+            });
           });
-        });
+        }
+
+        setAllCampaigns(campaignsArr);
+      } catch (err) {
+        console.error("Kampanyalar alınamadı:", err);
       }
-      setAllCampaigns(campaignsArr);
     };
+
     fetchAll();
-    // eslint-disable-next-line
-  }, [categories, tags]);
+  }, [categories, tags, fetchCampaignsByCategory, fetchCampaignsByTag]);
+
+  const handleCategoryClick = (categoryId) => {
+    navigate(`/category/${categoryId}`);
+  };
 
   return (
     <div>
@@ -60,7 +68,7 @@ const HomePage = () => {
         <CampaignSlider campaigns={allCampaigns} />
         <ShopByCategorySection
           categories={categories}
-          onCategoryClick={(id) => navigate(`/category/${id}`)}
+          onCategoryClick={handleCategoryClick}
         />
         <BestSellersSection />
       </main>
@@ -70,5 +78,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-// Bu bir Vercel dağıtım tetikleyicisidir. Daha sonra silinebilir.
