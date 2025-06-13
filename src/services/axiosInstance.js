@@ -1,5 +1,3 @@
-// client/src/services/axiosInstance.js
-
 import axios from "axios";
 
 // Session ID yönetimi
@@ -16,27 +14,24 @@ const generateSessionId = () => {
   return 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
 };
 
-// Session ID'yi temizle (kullanıcı giriş yaptığında)
 const clearSessionId = () => {
   localStorage.removeItem("sessionId");
 };
 
-// Global axios örneği
+// ✅ BACKEND ADRESİ .env DOSYASINDAN ALINIYOR
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: process.env.ACT_APP_API_BASE_UR,
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-// Interceptor: Her istekten önce token veya session ID'yi ekle
+// İstek öncesi interceptor: Token veya Session ID ekleniyor
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
 
-    // Şu endpoint'lerde token ekleme
     const noAuthNeeded = ["/auth/register", "/auth/onboard", "/auth/login"];
-
     const isNoAuthRoute = noAuthNeeded.some((path) =>
       config.url?.includes(path)
     );
@@ -44,7 +39,6 @@ axiosInstance.interceptors.request.use(
     if (token && !isNoAuthRoute) {
       config.headers.Authorization = `Bearer ${token}`;
     } else if (!isNoAuthRoute) {
-      // Token yoksa session ID ekle
       const sessionId = getSessionId();
       config.headers['X-Session-ID'] = sessionId;
     }
@@ -54,7 +48,7 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor: Backend'den gelen session ID'yi sakla
+// Yanıt sonrası interceptor: Session ID güncelleniyor
 axiosInstance.interceptors.response.use(
   (response) => {
     const sessionId = response.headers['x-session-id'];
@@ -66,7 +60,7 @@ axiosInstance.interceptors.response.use(
   (error) => Promise.reject(error)
 );
 
-// Export edilecek fonksiyonlar
+// Yardımcı fonksiyonları dışarı aç
 axiosInstance.clearSessionId = clearSessionId;
 axiosInstance.getSessionId = getSessionId;
 
