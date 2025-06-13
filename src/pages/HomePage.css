@@ -1,0 +1,14 @@
+.homepage-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 2rem 0;
+  background: #fafbfc;
+  min-height: 100vh;
+}
+
+@media (max-width: 900px) {
+  .homepage-main {
+    max-width: 100%;
+    padding: 0 0.5rem 2rem 0.5rem;
+  }
+} 

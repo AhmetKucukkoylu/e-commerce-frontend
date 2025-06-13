@@ -1,0 +1,88 @@
+.product-filter-sidebar {
+  min-width: 240px;
+  max-width: 260px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.07);
+  padding: 2rem 1.2rem 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-right: 3.5rem;
+  margin-top: 2rem;
+  height: fit-content;
+  align-self: flex-start;
+}
+.filter-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.filter-group label {
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 0.1rem;
+}
+.filter-group select, .filter-group input[type="number"] {
+  padding: 0.6rem 0.8rem;
+  border-radius: 7px;
+  border: 1.5px solid #bdbdbd;
+  font-size: 1.05rem;
+  background: #f5f7fa;
+  transition: border 0.2s;
+}
+.filter-group select:focus, .filter-group input[type="number"]:focus {
+  border: 1.5px solid #1976d2;
+  outline: none;
+}
+.filter-price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.filter-price-input {
+  width: 70px;
+  min-width: 0;
+  text-align: center;
+}
+.filter-reset-btn {
+  background: #e3eafc;
+  color: #1976d2;
+  border: none;
+  border-radius: 7px;
+  padding: 0.7rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  transition: background 0.15s;
+}
+.filter-reset-btn:hover {
+  background: #c3cfe2;
+}
+@media (max-width: 900px) {
+  .product-filter-sidebar {
+    min-width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-top: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+  .filter-group {
+    min-width: 120px;
+    flex: 1 1 120px;
+  }
+  .filter-price-input {
+    width: 50px;
+  }
+} 

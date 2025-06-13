@@ -1,0 +1,110 @@
+.category-manager-modern {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.category-manager-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 0.7rem;
+}
+.category-form-modern {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.category-input {
+  border: 1.5px solid #e3eafc;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1.05rem;
+  background: #f5f7fa;
+  outline: none;
+  transition: border 0.15s;
+  flex: 1;
+}
+.category-input:focus {
+  border-color: #1976d2;
+  background: #fff;
+}
+.category-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s;
+}
+.category-btn:hover {
+  background: #1565c0;
+}
+.category-btn.danger {
+  background: #e53935;
+}
+.category-btn.danger:hover {
+  background: #b71c1c;
+}
+.category-btn.ghost {
+  background: #e3eafc;
+  color: #1976d2;
+}
+.category-btn.ghost:hover {
+  background: #c3cfe2;
+}
+.category-list-modern {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.category-card-modern {
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.04);
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  border: 1.5px solid #e3eafc;
+  transition: box-shadow 0.13s;
+}
+.category-card-modern:hover {
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+}
+.category-name {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #222b45;
+}
+.category-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+@media (max-width: 700px) {
+  .category-manager-modern {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    max-width: 100%;
+  }
+  .category-card-modern {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    padding: 0.7rem 0.7rem;
+  }
+} 

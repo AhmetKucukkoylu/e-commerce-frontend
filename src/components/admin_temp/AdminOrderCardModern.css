@@ -1,0 +1,108 @@
+.admin-order-card-modern {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.07);
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-width: 0;
+  transition: box-shadow 0.15s;
+}
+.admin-order-card-modern:hover {
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+}
+.admin-order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+.admin-order-id {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #1976d2;
+}
+.admin-order-user {
+  font-size: 1.05rem;
+  color: #222b45;
+}
+.admin-order-status {
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.2rem 1.1rem;
+  border-radius: 1rem;
+  background: #e3f2fd;
+  color: #1976d2;
+  text-transform: capitalize;
+}
+.status-hazırlanıyor { background: #fffde7; color: #fbc02d; }
+.status-kargoya\ verildi { background: #e3f2fd; color: #1976d2; }
+.status-teslim\ edildi { background: #e8f5e9; color: #43a047; }
+.status-iptal\ edildi { background: #ffebee; color: #e53935; }
+.admin-order-card-info {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.01rem;
+  color: #444;
+}
+.admin-order-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.2rem;
+}
+.admin-order-status-select {
+  border: 1.5px solid #e3eafc;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1.05rem;
+  background: #f5f7fa;
+  outline: none;
+  transition: border 0.15s;
+}
+.admin-order-status-select:focus {
+  border-color: #1976d2;
+  background: #fff;
+}
+.admin-order-divider {
+  border: none;
+  border-top: 1.5px solid #e3eafc;
+  margin: 1rem 0;
+}
+.admin-order-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.admin-order-item-name {
+  font-weight: 600;
+  color: #222b45;
+}
+.admin-order-item-qty {
+  color: #1976d2;
+  font-weight: 600;
+}
+.admin-order-item-price {
+  color: #43a047;
+  font-weight: 700;
+}
+@media (max-width: 700px) {
+  .admin-order-card-modern {
+    padding: 1rem 0.7rem 1rem 0.7rem;
+  }
+  .admin-order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .admin-order-card-info {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+} 

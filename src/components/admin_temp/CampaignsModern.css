@@ -1,0 +1,106 @@
+.campaign-form-modern {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.07);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 520px;
+}
+.campaign-form-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 0.7rem;
+}
+.campaign-input {
+  border: 1.5px solid #e3eafc;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1.05rem;
+  background: #f5f7fa;
+  outline: none;
+  transition: border 0.15s;
+}
+.campaign-input:focus {
+  border-color: #1976d2;
+  background: #fff;
+}
+.campaign-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.15s;
+}
+.campaign-btn:hover {
+  background: #1565c0;
+}
+.campaign-btn.danger {
+  background: #e53935;
+}
+.campaign-btn.danger:hover {
+  background: #b71c1c;
+}
+.campaigns-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+.campaign-card-modern {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.07);
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-width: 0;
+  transition: box-shadow 0.15s;
+}
+.campaign-card-modern:hover {
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+}
+.campaign-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+.campaign-card-icon {
+  font-size: 1.5rem;
+  color: #1976d2;
+}
+.campaign-card-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #222b45;
+  margin: 0;
+}
+.campaign-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 1.01rem;
+  color: #444;
+}
+@media (max-width: 900px) {
+  .campaign-form-modern {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    max-width: 100%;
+  }
+  .campaigns-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+} 

@@ -1,0 +1,52 @@
+.admin-product-filters-modern {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.04);
+  padding: 1.2rem 1.5rem;
+}
+.filter-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.7rem;
+}
+.filter-label {
+  font-size: 1.01rem;
+  color: #1976d2;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-right: 0.3rem;
+}
+.filter-input {
+  border: 1.5px solid #e3eafc;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1.05rem;
+  background: #f5f7fa;
+  outline: none;
+  transition: border 0.15s;
+  margin-right: 0.7rem;
+}
+.filter-input:focus {
+  border-color: #1976d2;
+  background: #fff;
+}
+.filter-sep {
+  color: #888;
+  font-size: 1.2rem;
+  margin: 0 0.2rem;
+}
+@media (max-width: 1100px) {
+  .admin-product-filters-modern {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    padding: 1rem 0.7rem;
+  }
+  .filter-label, .filter-input {
+    margin-right: 0.3rem;
+  }
+} 
