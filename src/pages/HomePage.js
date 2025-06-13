@@ -10,6 +10,8 @@ import BestSellersSection from "../components/BestSellersSection";
 import CampaignSlider from "../components/CampaignSlider";
 import { useEffect, useState } from "react";
 
+// Vercel dağıtımını tetiklemek için geçici yorum. Bu yorumu daha sonra silebilirsiniz.
+
 const HomePage = () => {
   const { categories } = useCategories();
   const { tags } = useTags();
@@ -29,7 +31,7 @@ const HomePage = () => {
             type: "category",
             categoryId: cat.id,
             title: c.title,
-            description: c.description
+            description: c.description,
           });
         });
       }
@@ -42,7 +44,7 @@ const HomePage = () => {
             type: "tag",
             tagId: tag.id,
             title: c.title,
-            description: c.description
+            description: c.description,
           });
         });
       }
@@ -56,7 +58,10 @@ const HomePage = () => {
     <div>
       <main className="homepage-main">
         <CampaignSlider campaigns={allCampaigns} />
-        <ShopByCategorySection categories={categories} onCategoryClick={id => navigate(`/category/${id}`)} />
+        <ShopByCategorySection
+          categories={categories}
+          onCategoryClick={(id) => navigate(`/category/${id}`)}
+        />
         <BestSellersSection />
       </main>
       <Footer />
@@ -65,3 +70,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// Bu bir Vercel dağıtım tetikleyicisidir. Daha sonra silinebilir.

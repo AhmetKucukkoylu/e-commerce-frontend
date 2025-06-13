@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "../components/cart/CartPage.css";
 import Footer from "../components/Footer/Footer";
 
+
 // Yeni bileşenler
 import CartItemList from "../components/cart/CartItemList";
 import CartTotal from "../components/cart/CartTotal";
